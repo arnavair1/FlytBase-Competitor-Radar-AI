@@ -20,7 +20,7 @@ if st.button("Check Competitor Update"):
     competitor = next(c for c in COMPETITORS if c["name"] == selected)
 
     st.info("Scraping competitor page...")
-    text = scrape_page(competitor["url"])
+    text = scrape_page(competitor["pages"][0])
 
     if not text:
         st.error("Could not scrape page")
